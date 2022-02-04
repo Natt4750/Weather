@@ -30,7 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    //Declaration des champs
+    //Declaration des champss
     TextView mDate,mCity,mTemp,mDescription;
     ImageView imgIcon;
     String maVille="Toronto";
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonObjectRequest);
 
-
+    //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
 
     }
 }
