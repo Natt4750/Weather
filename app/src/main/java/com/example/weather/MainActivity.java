@@ -31,7 +31,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     //Declaration des champss
-    TextView mDate,mCity,mTemp,mDescription;
+    TextView mDate,mCity,mTemp,mDescription,mFeels,mPressure;
     ImageView imgIcon;
     String maVille="Toronto";
 
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mPressure=findViewById(R.id.mPressure);
+        mFeels=findViewById(R.id.mFeels);
         mDate=findViewById(R.id.mDate);
         mCity=findViewById(R.id.mCity);
         mTemp=findViewById(R.id.mTemp);
@@ -98,13 +100,22 @@ public class MainActivity extends AppCompatActivity {
                     int tempC=(int)Math.round(main_object.getDouble("temp"));
                     String temp=String.valueOf(tempC);
 
+                    int feelsC=(int)Math.round(main_object.getDouble("feels_like"));
+                    String feels=String.valueOf(feelsC);
+
+                    int pressure=(int)Math.round(main_object.getDouble("pressure"));
+                    String pres=String.valueOf(pressure);
+
                     String description=object.getString("description");
                     String city=response.getString("name");
                     String icon=object.getString("icon");
+
                     //mettre les valeurs dans les champs
-                    mCity.setText(city);
-                    mTemp.setText(temp);
-                    mDescription.setText(description);
+                    mPressure.setText("Pressure : " + pres);
+                    mCity.setText("City : " + city);
+                    mTemp.setText("Temperature : " + temp);
+                    mFeels.setText("Feels like :" + feels);
+                    mDescription.setText("Descrtiption : " + description);
                     //formattage du temps
                     Calendar calendar=Calendar.getInstance();
                     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMMM dd");
