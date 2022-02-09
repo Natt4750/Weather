@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     mPressure.setText("Pressure : " + pres);
                     mCity.setText("City : " + city);
                     mTemp.setText("Temperature : " + temp);
-                    mFeels.setText("Feels like :" + feels);
+                    mFeels.setText("Feels like : " + feels);
                     mDescription.setText("Descrtiption : " + description);
                     //formattage du temps
                     Calendar calendar=Calendar.getInstance();
